@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0">
+  <file src="src/TestingSystem/Infrastructure/Doctrine/Repositories/QuestionsRepository.php">
+    <MissingTemplateParam>
+      <code><![CDATA[QuestionsRepository]]></code>
+    </MissingTemplateParam>
+    <MixedInferredReturnType>
+      <code><![CDATA[\App\TestingSystem\Domain\Model\Question[]]]></code>
+    </MixedInferredReturnType>
+    <MixedReturnStatement>
+      <code><![CDATA[$this->getRepository()->createQueryBuilder('q')
+            ->where('q.id IN (:ids)')
+            ->setParameter('ids', $ids)
+            ->getQuery()
+            ->getResult()]]></code>
+    </MixedReturnStatement>
+  </file>
+  <file src="src/TestingSystem/Infrastructure/Doctrine/Repositories/SubmissionsRepository.php">
+    <MissingTemplateParam>
+      <code><![CDATA[SubmissionsRepository]]></code>
+    </MissingTemplateParam>
+  </file>
+  <file src="src/TestingSystem/Infrastructure/Doctrine/Repositories/TestsRepository.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[$entity]]></code>
+      <code><![CDATA[$this->getRepository()->findAll()]]></code>
+    </LessSpecificReturnStatement>
+    <MissingTemplateParam>
+      <code><![CDATA[TestsRepository]]></code>
+    </MissingTemplateParam>
+    <MoreSpecificReturnType>
+      <code><![CDATA[Test]]></code>
+      <code><![CDATA[Test[]]]></code>
+    </MoreSpecificReturnType>
+  </file>
+</files>
